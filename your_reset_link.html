@@ -29,7 +29,7 @@
       margin-right: 10px; /* Adjust the margin as needed */
     }
     input {
-      margin-left: 90px; /* Adjust the margin as needed */
+     margin-right: 50px; /* Adjust the margin as needed */
       height: 25px;
     }
     label {
@@ -45,7 +45,7 @@
     position: fixed;
 text-align: center;
 left: 500px;
-width: 500px;
+width: 400px;
 height: 60%;
 background-color: white;
 border: 1px;
@@ -59,22 +59,56 @@ padding: 15px ;
     color: #ffffff;
     padding: 5px 20px;
   } 
-  
+  .navbar{
+   font-family:calibri; padding-right: 15px; padding-left: 15px; 
+}
+.navdiv{
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo a{
+  font-size: 35px; font-weight: 300; color: white; 
+}
+li{
+  font-size: 35px; font-weight: 300; 
+  list-style: none; display: inline-block; color: black;
+}
+#lginbutton button{
+  background-color: blue;
+  color: white;
+  font-size: medium;
+}
 
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navdiv">
+          <button class="button">Menu</button>
+         <!-- <img class="company-logo" src="/Login/photo_6305324389725485694_m.jpg" alt="Company Logo">-->
+         <!--<div class="logo"><a href="#">companylogo</a></div>-->
+          
+          <ul>
+            <button class="button"><li>Employee Self Service</li></button>
+          </ul>
+          <button class="button">Notification</button>
+          <button class="button">Profile</button>
+        </div>
+      </nav>
+      <br>
+      <br>
     <div class="reset">
     <form>
-        <label for="password">password</label>
-        <input type="password" id="password"  placeholder="your current password"  >
+        <label for="password" style="margin-top: 10%;">password</label>
+        <input type="password" id="password"  placeholder="your current password"   >
        
     </br>
-        <label for="cnfrm-password">Conformpassword</label>
-        <input type="password" id="cnfrm-password" placeholder="enter new password" >
+        <label for="cnfrm-password" style="margin-top: 10%;" >Conformpassword</label>
+        <input type="password" id="cnfrm-password" placeholder="enter new password"  >
         <p id="meassage"></p>
     </br>
-        <input type="button" onclick="checkpassword()"  value="submit" style="margin-top: 22%;" >
+    <div id="lginbutton">
+        <button type="button" onclick="checkpassword()" style="margin-top: 10%;" ><b>Submit</b></button>
+    </div>
     </form>
     </div>
 
@@ -90,12 +124,13 @@ padding: 15px ;
                 if(password==cnfrmpassword){
                     message.textContent="password match";
                     message.style.backgroundColor="#3ae374";
+                    alert(" reset password is updated");
                 }
                 else{
                     message.textContent="password doesn't match";
                     message.style.backgroundColor="#ff4d4d";
                 }
-                alert(" reset password is updated");
+                //alert(" reset password is updated");
                 
             }
             else{
